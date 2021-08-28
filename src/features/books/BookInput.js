@@ -24,6 +24,10 @@ function BookInput() {
     const book = { ...formData, id: uuid() };
 
     dispatch(addBook(book));
+    dispatch({
+      type: "books/add",
+      payload: book,
+    });
     setFormData({
       title: "",
       authorName: "",
